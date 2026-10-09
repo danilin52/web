@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Диаграмма классов — ЛР №1</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f8fa;
+            color: #0d0d0d;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            padding: 32px;
+        }
+        h1 { font-size: 22px; font-weight: 600; margin: 0 0 8px; }
+        p.sub { color: #6b7280; margin: 0 0 24px; font-size: 14px; }
+        svg { width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>Диаграмма классов — ЛР №1</h1>
+    <p class="sub">AbstractUser → User → SuperUser, интерфейс SuperUserInterface</p>
+
+    <svg viewBox="0 0 940 700" xmlns="http://www.w3.org/2000/svg"
+         font-family="Consolas, 'Courier New', monospace">
+
+        <g>
+            <rect x="60" y="30" width="310" height="100" rx="4"
+                  fill="#ffffff" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="215" y="58" text-anchor="middle" font-size="16"
+                  font-style="italic" font-weight="bold">AbstractUser</text>
+            <line x1="60" y1="70" x2="370" y2="70" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="76" y="98" font-size="13" font-style="italic">+ showInfo(): void</text>
+        </g>
+
+        <g>
+            <rect x="60" y="210" width="310" height="235" rx="4"
+                  fill="#ffffff" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="215" y="238" text-anchor="middle" font-size="16" font-weight="bold">User</text>
+            <line x1="60" y1="250" x2="370" y2="250" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="76" y="276" font-size="13">+ static int $count</text>
+            <text x="76" y="300" font-size="13">+ string $name</text>
+            <text x="76" y="324" font-size="13">+ string $login</text>
+            <text x="76" y="348" font-size="13">- string $password</text>
+            <text x="76" y="380" font-size="13">+ __construct(name, login, password)</text>
+            <text x="76" y="404" font-size="13">+ __destruct()</text>
+            <text x="76" y="428" font-size="13">+ showInfo(): void</text>
+        </g>
+
+        <g>
+            <rect x="60" y="500" width="310" height="165" rx="4"
+                  fill="#ffffff" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="215" y="528" text-anchor="middle" font-size="16" font-weight="bold">SuperUser</text>
+            <line x1="60" y1="540" x2="370" y2="540" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="76" y="566" font-size="13">+ static int $count</text>
+            <text x="76" y="590" font-size="13">+ string $role</text>
+            <text x="76" y="614" font-size="13">+ __construct(name, login, password, role)</text>
+            <text x="76" y="638" font-size="13">+ showInfo(): void</text>
+            <text x="76" y="662" font-size="13">+ getInfo(): array</text>
+        </g>
+
+        <g>
+            <rect x="620" y="210" width="280" height="90" rx="4"
+                  fill="#ffffff" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="760" y="238" text-anchor="middle" font-size="16"
+                  font-style="italic" font-weight="bold">«interface»</text>
+            <text x="760" y="258" text-anchor="middle" font-size="16"
+                  font-style="italic" font-weight="bold">SuperUserInterface</text>
+            <line x1="620" y1="268" x2="900" y2="268" stroke="#0d0d0d" stroke-width="1.5"/>
+            <text x="636" y="292" font-size="13">+ getInfo(): array</text>
+        </g>
+
+        <line x1="215" y1="210" x2="215" y2="150" stroke="#0d0d0d" stroke-width="1.5"/>
+        <polygon points="215,130 205,150 225,150" fill="#ffffff" stroke="#0d0d0d" stroke-width="1.5"/>
+
+        <line x1="215" y1="500" x2="215" y2="465" stroke="#0d0d0d" stroke-width="1.5"/>
+        <polygon points="215,445 205,465 225,465" fill="#ffffff" stroke="#0d0d0d" stroke-width="1.5"/>
+
+        <path d="M 370 560 H 760 V 320" fill="none" stroke="#0d0d0d"
+              stroke-width="1.5" stroke-dasharray="6 5"/>
+        <polyline points="750,320 760,300 770,320" fill="none"
+                  stroke="#0d0d0d" stroke-width="1.5"/>
+    </svg>
+</div>
+</body>
+</html>
